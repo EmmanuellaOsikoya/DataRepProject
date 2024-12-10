@@ -5,6 +5,8 @@ import MenuBar from './components/MenuBar';
 import Banner from './components/Banner';
 import Substance from './components/Substance';
 import Bottom from './components/Bottom';
+import Display from './components/Display';
+import AddARecipe from './components/AddARecipe';
 
 //components will now appear in App.js
 function App() {
@@ -12,9 +14,9 @@ function App() {
       <Router>
         <MenuBar/>
         <Routes>
-          <Route path ="/main" element={<Substance/>}/>
-          <Route path ="/display" element={<Banner/>}/>
-          <Route path ="/generate" element={<Bottom/>}/>
+          <Route path ="/" element={<Substance/>}/>
+          <Route path ="/display" element={<Display/>}/>
+          <Route path ="/add" element={<AddARecipe/>}/>
         </Routes>
       </Router>
   );
