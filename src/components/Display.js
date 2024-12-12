@@ -23,7 +23,7 @@ function Display() {
 
   return (
     <div>
-      <h3>Hello from the Display component</h3>
+      <h3>Choose a recipe to follow: </h3>
       <Recipes myRecipes={recipes} />
     </div>
   );

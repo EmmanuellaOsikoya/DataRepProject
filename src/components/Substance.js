@@ -4,7 +4,7 @@ import React from 'react';
 const Substance = () => {
   return (
     <div>
-      <h1>Welcome to myRecipeApp!</h1>
+      <h1>Welcome to WhiskAway where tasty recipes are only a whisk away!</h1>
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
