@@ -21,8 +21,20 @@ function Display() {
   }, []);
 
   return (
-    <div style={{backgroundImage: 'url(/food.jpg)', height: '300vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h3>Choose a recipe to follow: </h3>
+    <div
+    style={{
+      backgroundImage: 'url(/food.jpg)',
+      height: '300vh',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      display: 'flex',  
+      flexDirection: 'column',  
+      justifyContent: 'center',  
+      alignItems: 'center',  
+      textAlign: 'center', 
+    }}
+  >
+      <h3 style={{ color: 'white' }}>Choose a recipe to follow: </h3>
       <Recipes myRecipes={recipes} />
     </div>
   );
