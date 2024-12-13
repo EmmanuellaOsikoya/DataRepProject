@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 //creates a navigation bar that the user can use to navigate between pages
 const MenuBar = () => {
     return (
-        <Navbar bg="dark" data-bs-theme="dark">
+        <Navbar data-bs-theme="dark" style={{ backgroundColor: 'purple', fontFamily: 'Lora' }}>
           <Container>
             <Navbar.Brand href="/">WhiskAway</Navbar.Brand>
             <Nav className="me-auto">

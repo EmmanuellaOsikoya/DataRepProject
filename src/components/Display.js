@@ -11,18 +11,17 @@ function Display() {
 
   useEffect(() => {
     axios.get('https://jsonblob.com/api/jsonblob/1316050341682405376')
-    .then((response) => {
-      console.log(response)
-      setRecipes(response.data.recipes);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((response) => {
+        console.log(response)
+        setRecipes(response.data.recipes);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-
   return (
-    <div>
+    <div style={{backgroundImage: 'url(/food.jpg)', height: '300vh', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h3>Choose a recipe to follow: </h3>
       <Recipes myRecipes={recipes} />
     </div>

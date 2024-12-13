@@ -1,18 +1,24 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 //this file is responsible for rendering recipe items
 
-const RecipeItem = (props) => {
+function RecipeItem (props) {
 
-    useEffect(
-        () => {
+    const handleDelete = (e) => {
+        e.preventDefault();
+        axios.delete('http://localhost:4000/api/recipes' + props.myRecipe._id)
+            .then(() => {
+                props.Reload(); // Refresh the recipe list after deletion
+            })
+            .catch((error) => {
+                console.error("Error deleting recipe:", error);
+            });
+    };
 
-        }
-    )
-
+    //repsonsible for the appearance of the cards on the recipes page of WhiskAway
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={props.myRecipe.Picture} />
@@ -24,7 +30,10 @@ const RecipeItem = (props) => {
                 <Card.Text>
                     {props.myRecipe.Servings}
                 </Card.Text>
-                <Button variant="primary">I want to make this!</Button>
+                <Card.Text>
+                    <Link to={"/change" + props.myRecipe._id} className='btn btn-primary'>Change</Link>
+                    <Button variant="danger" onClick={handleDelete}>Delete</Button>
+                </Card.Text>
             </Card.Body>
         </Card>
     );
